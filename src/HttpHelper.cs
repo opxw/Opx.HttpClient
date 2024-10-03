@@ -15,7 +15,7 @@ namespace Opx.Http
             };
         }
 
-        public static T? Convert<T>(this ApiTaskResult s, bool breakOnException = true)
+        public static T? ConvertFromJson<T>(this ApiTaskResult s, bool breakOnException = true)
         {
             var result = default(T);
 
@@ -103,7 +103,5 @@ namespace Opx.Http
                 .Unwrap()
                 .GetAwaiter()
                 .GetResult();
-
-
     }
 }
