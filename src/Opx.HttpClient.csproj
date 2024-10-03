@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyName>Opx.HttpClient</AssemblyName>
+    <RootNamespace>Opx.Http</RootNamespace>
+    <Title>Opx.HttpClient</Title>
+    <Authors>Noviyanto Wibowo</Authors>
+    <Description>HTTP Client Helper. 
+Features: 
+Read JSON (API) to Any&lt;T&gt;
+Read content &amp; stream from web page
+Support HTTP 2 &amp; 3</Description>
+    <Copyright>© 2024, Noviyanto Wibowo</Copyright>
+    <PackageIcon>logo.png</PackageIcon>
+    <PackageTags>http;httpclient;</PackageTags>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\logo.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
