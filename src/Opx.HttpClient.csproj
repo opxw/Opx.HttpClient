@@ -8,14 +8,13 @@
     <RootNamespace>Opx.Http</RootNamespace>
     <Title>Opx.HttpClient</Title>
     <Authors>Noviyanto Wibowo</Authors>
-    <Description>HTTP Client Helper. 
-Features: 
-Read JSON (API) to Any&lt;T&gt;
-Read content &amp; stream from web page
-Support HTTP 2 &amp; 3</Description>
+    <Description>HTTP Client Helper :
+Read JSON (API) to Any&lt;T&gt;, Read content from web page,
+support HTTP 2 &amp; 3, Async &amp; Sync supported</Description>
     <Copyright>© 2024, Noviyanto Wibowo</Copyright>
     <PackageIcon>logo.png</PackageIcon>
     <PackageTags>http;httpclient;</PackageTags>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

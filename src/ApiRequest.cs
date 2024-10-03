@@ -13,7 +13,7 @@ namespace Opx.Http
             BaseAddress = baseAddress;
         }
 
-        public async Task<T?> RequestJsonAsync<T>(HttpMethod method, string path, ApiRequestParameter? parameter = null)
+        public async Task<T?> RequestJsonAsync<T>(HttpMethod method, string path = "", ApiRequestParameter? parameter = null)
         {
             var result = default(T);
             var request = GetRequest(method, path, parameter);

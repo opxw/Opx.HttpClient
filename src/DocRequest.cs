@@ -9,8 +9,7 @@
             BaseAddress = baseAddress;
         }
 
-        public async Task<string?> RequestStringAsync(HttpMethod method, string path,
-            HttpRequestParameter? parameter = null)
+        public async Task<string?> RequestStringAsync(HttpMethod method, string path = "", HttpRequestParameter? parameter = null)
         {
             var result = default(string?);
             var request = GetRequest(method, path, parameter);
@@ -46,8 +45,7 @@
             return result;
         }
 
-        public async Task<Stream?> RequestStreamAsync(HttpMethod method, string path,
-            HttpRequestParameter? parameter = null)
+        public async Task<Stream?> RequestStreamAsync(HttpMethod method, string path = "", HttpRequestParameter? parameter = null)
         {
             var result = default(Stream?);
             var request = GetRequest(method, path, parameter);
@@ -83,14 +81,12 @@
             return result;
         }
 
-        public string? RequestString(HttpMethod method, string path,
-            HttpRequestParameter? parameter = null)
+        public string? RequestString(HttpMethod method, string path = "", HttpRequestParameter? parameter = null)
         {
             return HttpHelper.RunSync<string>(() => RequestStringAsync(method, path, parameter));
         }
 
-        public Stream? RequestStream(HttpMethod method, string path,
-            HttpRequestParameter? parameter = null)
+        public Stream? RequestStream(HttpMethod method, string path = "", HttpRequestParameter? parameter = null)
         {
             return HttpHelper.RunSync<Stream>(() => RequestStreamAsync(method, path, parameter));
         }
