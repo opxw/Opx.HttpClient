@@ -15,7 +15,11 @@ namespace Opx.Http
         public HttpRequestBase(HttpRequestVersion httpVersion = HttpRequestVersion.Http20, 
             HttpVersionPolicy httpVersionPolicy = HttpVersionPolicy.RequestVersionOrHigher)
         {
-            var handler = new HttpClientHandler();
+            var handler = new HttpClientHandler()
+            {
+                ServerCertificateCustomValidationCallback = HttpHandler.DangerousAcceptAnyServerCertificateValidator
+            };
+
             _httpClient = new HttpClient(handler)
             {
                 Timeout = System.Threading.Timeout.InfiniteTimeSpan
