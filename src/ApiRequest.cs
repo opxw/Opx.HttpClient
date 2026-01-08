@@ -7,8 +7,9 @@ namespace Opx.Http
     public class ApiRequest : HttpRequestBase, IApiRequest
     {
         public ApiRequest(string baseAddress, HttpRequestVersion httpVersion = HttpRequestVersion.Http20,
-            HttpVersionPolicy httpVersionPolicy = HttpVersionPolicy.RequestVersionOrHigher)
-            : base(httpVersion, httpVersionPolicy)
+            HttpVersionPolicy httpVersionPolicy = HttpVersionPolicy.RequestVersionOrHigher,
+			HttpHandlerKind kind = HttpHandlerKind.HttpClient)
+            : base(httpVersion, httpVersionPolicy, kind)
         {
             BaseAddress = baseAddress;
         }
