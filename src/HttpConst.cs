@@ -7,4 +7,10 @@
         Http20,
         Http30
     }
+
+    public enum HttpHandlerKind
+    {
+        HttpClient,
+        Socket
+    }
 }

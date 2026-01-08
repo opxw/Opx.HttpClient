@@ -13,12 +13,25 @@ namespace Opx.Http
         private HttpVersionPolicy _httpVersionPolicy { get; set; }
 
         public HttpRequestBase(HttpRequestVersion httpVersion = HttpRequestVersion.Http20, 
-            HttpVersionPolicy httpVersionPolicy = HttpVersionPolicy.RequestVersionOrHigher)
+            HttpVersionPolicy httpVersionPolicy = HttpVersionPolicy.RequestVersionOrHigher,
+            HttpHandlerKind kind = HttpHandlerKind.HttpClient)
         {
-            var handler = new HttpClientHandler()
+            HttpMessageHandler handler;
+
+            if (kind == HttpHandlerKind.HttpClient)
             {
-                ServerCertificateCustomValidationCallback = HttpHandler.DangerousAcceptAnyServerCertificateValidator
-            };
+                handler = new HttpClientHandler()
+                {
+                    ServerCertificateCustomValidationCallback = HttpHandler.DangerousAcceptAnyServerCertificateValidator
+                };
+            }
+            else
+            {
+                handler = new SocketsHttpHandler()
+                {
+
+                };
+            }
 
             _httpClient = new HttpClient(handler)
             {
