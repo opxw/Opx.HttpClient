@@ -91,8 +91,9 @@ namespace Opx.Http
             var props = query.GetType().GetProperties();
             foreach (var prop in props)
             {
-                var value = prop.GetValue(query, null)?.ToString();
-                queryPath += $"{prop.Name}={value}&";
+                var value = prop.GetValue(query, null);
+                if (value != null)
+                    queryPath += $"{prop.Name}={value.ToString()}&";
             }
 
             if (!string.IsNullOrWhiteSpace(queryPath))
