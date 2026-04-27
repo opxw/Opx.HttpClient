@@ -14,7 +14,7 @@ support HTTP 2 &amp; 3, Async &amp; Sync supported</Description>
     <Copyright>© 2024, Noviyanto Wibowo</Copyright>
     <PackageIcon>logo.png</PackageIcon>
     <PackageTags>http;httpclient;</PackageTags>
-    <Version>1.0.9</Version>
+    <Version>1.1.0</Version>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 

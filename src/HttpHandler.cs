@@ -4,6 +4,7 @@
     {
         public HttpHandler()
         {
+            UseProxy = false;
             ServerCertificateCustomValidationCallback += (sender, certificate, chain, SslPolicyErrors) => true;
         }
 

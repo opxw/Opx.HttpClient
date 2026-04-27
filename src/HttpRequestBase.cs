@@ -22,20 +22,22 @@ namespace Opx.Http
             {
                 handler = new HttpClientHandler()
                 {
-                    ServerCertificateCustomValidationCallback = HttpHandler.DangerousAcceptAnyServerCertificateValidator
+                    ServerCertificateCustomValidationCallback = HttpHandler.DangerousAcceptAnyServerCertificateValidator,
+                    UseProxy = false,
                 };
             }
             else
             {
                 handler = new SocketsHttpHandler()
                 {
-
+                    UseProxy = false,
                 };
             }
 
             _httpClient = new HttpClient(handler)
             {
-                Timeout = System.Threading.Timeout.InfiniteTimeSpan
+                Timeout = System.Threading.Timeout.InfiniteTimeSpan,
+                
             };
             _httpVersion = httpVersion;
             _httpVersionPolicy = httpVersionPolicy;
